@@ -1,6 +1,6 @@
 Destructuring is one of the most powerful features of ES6. It allows for painless assignment of variables. However, it could be so much more.
 
-Destructuring is inherently pattern matching. You can see this in one of the most shopped around examples of destructuring, flipping context.
+Destructuring is pattern matching. You can see this in one of the most shopped around examples of destructuring, flipping context.
 
 ```
 var a = 1,

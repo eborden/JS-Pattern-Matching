@@ -18,7 +18,7 @@ if (i = true) {
 }
 ```
 
-The implicit value is obvious in left hand assignment. It is the value of "i". With a destructured statement the value is less implicit, but logical to infer.
+The implicit value is obvious in left hand assignment. It is the value of ```i```. With a destructured statement the value is less implicit, but logical to infer.
 
 ```
 console.log([a, b] = [1, 2]);//[1, 2]
@@ -48,20 +48,28 @@ x[2] = 3;
 ([a, b, c] = x).length;//3
 ```
 
-With this in mind some sort of testing operator needs to be implemented, so we can get the full power of pattern matching. I propose the ?= operator as an existential pattern matcher.
+With this in mind some sort of testing operator needs to be implemented, so we can get the full power of pattern matching. I propose the ```?=``` operator as an existential pattern matcher.
 
 ```
 [a, b] ?= [1, 2];//true
+```
+```
 [a, b] ?= [1];//false
+```
+```
 [a, ...rest] ?= [1, 2];//true
+```
+```
 [a, ...rest] = [1];//false
+```
+```
 var x = [];
 x[0] = 1;
 x[2] = 3;
 [a, b, c] ?= x;//false
 ```
 
-Having this operator also handle let style assignment would further it's usefulness.
+```?=``` providing ```let``` style assignment would further it's usefulness.
 
 ```
 if ([x, ...rest] ?= [1, 2, 3, 4]) {
@@ -69,21 +77,21 @@ if ([x, ...rest] ?= [1, 2, 3, 4]) {
 }
 ```
 
-Further more in this context rest parameters could be expanded to include an unassigned rest.
+In this context rest parameters could be expanded to include an unassigned rest.
 
 ```
-[a, ...] = [1, 2];//true
-[a, ...] = [1];//false
+[a, ...] ?= [1, 2];//true
+[a, ...] ?= [1];//false
 ```
 
-With this pattern matching (and tail call optimization) we could implement an elegant recursive functions.
+With this pattern matching (and tail call optimization) we could implement elegant recursive functions.
 
 ```
 function reverse (a) {
   if (a.length < 1) {
      return [];
   } else if ([x, ...rest] ?= a) {
-     return reverse(rest).cat(x);
+     return reverse(rest).concat(x);
   }
 }
 ```

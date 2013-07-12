@@ -1,4 +1,4 @@
-Destructuring is one of the most powerful features of ES6. It allows for painless assignment of variables. However, it could be so much more.
+Destructuring is one of the most powerful features of ES6. It allows for painless assignment of variables, but it could be so much more.
 
 Destructuring is pattern matching. You can see this in one of the most shopped around examples of destructuring, flipping context.
 
@@ -8,7 +8,9 @@ var a = 1,
 console.log([b, a] = [a, b]);
 ```
 
-Inherently this operation is matching a pattern. It returns the given array in spyder monkey (one of the few engines supporting destructuring). This can be a useful tool.
+Inherently this operation is matching a pattern.
+
+In spyder monkey (one of the few engines supporting destructuring) it returns the matched array. This can be a useful tool.
 
 Consider the following statement:
 

@@ -86,7 +86,7 @@ In this context rest parameters could be expanded to include an unassigned rest.
 [a, ...] ?= [1];// false
 ```
 
-With this pattern matching (and tail call optimization) we could implement elegant recursive functions.
+With destructured pattern matching (and tail call optimization) we could implement elegant recursive functions.
 
 ```
 function reverse (a) {

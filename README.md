@@ -48,7 +48,7 @@ x[2] = 3;
 ([a, b, c] = x).length;//3
 ```
 
-With this in mind some sort of testing operator needs to be implemented, so we can get the full power of pattern matching. I propose the ```?=``` operator as an existential pattern matcher.
+With this in mind a testing operator needs to be implemented, so we can get the full power of pattern matching. I propose the ```?=``` operator as an existential pattern matcher.
 
 ```
 [a, b] ?= [1, 2];//true
@@ -69,7 +69,7 @@ x[2] = 3;
 [a, b, c] ?= x;//false
 ```
 
-```?=``` providing ```let``` style assignment would further it's usefulness.
+```?=``` providing ```let``` style assignment would further its usefulness.
 
 ```
 if ([x, ...rest] ?= [1, 2, 3, 4]) {
